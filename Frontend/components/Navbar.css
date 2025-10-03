@@ -1,0 +1,81 @@
+/* Navbar wrapper */
+.navbar {
+  background-color: #6f1d1b; /* tumepunane-pruun, õlle vibe */
+  padding: 12px 20px;
+  color: #fffaf0; /* helebeež tekst */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Flex container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Brand / Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fffaf0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.navbar-links {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  color: #fffaf0;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #f28f8f; /* roosakas hover */
+}
+
+/* Auth button */
+.btn {
+  border: 1px solid #fffaf0;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Login button */
+.btn.login {
+  background: transparent;
+  color: #fffaf0;
+}
+
+.btn.login:hover {
+  background: #f28f8f;
+  color: #6f1d1b;
+  border-color: #f28f8f;
+}
+
+/* Logout button */
+.btn.logout {
+  background: transparent;
+  color: #fffaf0;
+}
+
+.btn.logout:hover {
+  background: #f28f8f;
+  color: #6f1d1b;
+  border-color: #f28f8f;
+}

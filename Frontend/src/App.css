@@ -1,0 +1,83 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  min-height: 70vh;
+  background: linear-gradient(to right, #f8a5c2, #f78fb3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero .buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero .btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.hero .btn.light {
+  background: white;
+  color: #333;
+}
+
+.hero .btn.light:hover {
+  background: #f0f0f0;
+}
+
+.hero .btn.dark {
+  background: #222;
+  color: white;
+}
+
+.hero .btn.dark:hover {
+  background: #444;
+}
+
+/* Gallery Section */
+.gallery {
+  width: 100%;
+  padding: 50px 40px;
+  background: #fafafa;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  box-sizing: border-box;
+}
+
+.gallery .card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
