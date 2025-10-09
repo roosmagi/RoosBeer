@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
@@ -8,7 +7,8 @@ function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: 'url(/taust.jpg)'}}>
+        <div className="overlay"></div>
         <h1>RoosBeer</h1>
         <p>Jump into a new taste experience!</p>
         <div className="buttons">
