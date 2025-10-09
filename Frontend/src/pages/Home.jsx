@@ -21,18 +21,17 @@ function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
       <div className="gallery-title">
-      <h2>Our Gallery</h2>
+      <h2>Gallery</h2>
       </div>
       <section className="gallery">
         <div className="gallery-grid">
-          <img src="https://source.unsplash.com/random/400x400/?beer,1" alt="beer 1" />
-          <img src="https://source.unsplash.com/random/400x400/?beer,2" alt="beer 2" />
-          <img src="https://source.unsplash.com/random/400x400/?beer,3" alt="beer 3" />
-          <img src="https://source.unsplash.com/random/400x400/?brewery,4" alt="beer 4" />
-          <img src="https://source.unsplash.com/random/400x400/?beer,5" alt="beer 5" />
-          <img src="https://source.unsplash.com/random/400x400/?brew,6" alt="beer 6" />
+          <img src="outdoor.jpg" alt="Outdoor" />
+          <img src="Beer.png" alt="RoosBeer" />
+          <img src="taust.jpg" alt="Bar" />
+          <img src="beers.jpg" alt="Beer in glass" />
+          <img src="brewery.jpg" alt="Brewery" />
+          <img src="Toasting.jpg" alt="Toasting" />
         </div>
       </section>
     </div>

@@ -72,24 +72,22 @@
   background: #c2185b;
 }
 
-/* Gallery Section */
-
 .gallery {
   width: 100%;
   padding: 50px 40px;
-  background: #fafafa;
+  background-color: #ffffff;
   box-sizing: border-box;
 }
 
 .gallery-title {
+  background-color: #f1e8e8;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 30px;
-  color: #6f1d1b;
+  color: #000000;
 }
 
-/* Piltide grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
