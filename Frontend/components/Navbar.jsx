@@ -13,19 +13,21 @@ function NavigationBar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Brand */}
         <Link to="/" className="navbar-logo">RoosBeer</Link>
 
-        {/* Links */}
+        <div className="navbar-right">
+          <div className="navbar-links">
+            <Link to="/shop" className="nav-link">Shop</Link>
+            <Link to="/about" className="nav-link">About</Link>
+          </div>
 
-
-        {/* Auth button */}
-        <div className="navbar-auth">
-          {token ? (
-            <button className="btn logout" onClick={handleLogout}>Logout</button>
-          ) : (
-            <Link to="/login" className="btn login">Login</Link>
-          )}
+          <div className="navbar-auth">
+            {token ? (
+              <button className="btn logout" onClick={handleLogout}>Logout</button>
+            ) : (
+              <Link to="/login" className="btn login">Login</Link>
+            )}
+          </div>
         </div>
       </div>
     </nav>

@@ -1,53 +1,61 @@
-/* Navbar wrapper */
 .navbar {
-  background-color: #6f1d1b; /* tumepunane-pruun, õlle vibe */
-  padding: 12px 20px;
-  color: #fffaf0; /* helebeež tekst */
+  background-color: #6f1d1b; 
+  padding: 12px 32px;
+  color: #fffaf0; 
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* Flex container */
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-/* Brand / Logo */
 .navbar-logo {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
   color: #fffaf0;
   text-decoration: none;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #f28f8f;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem; 
 }
 
 /* Links */
 .navbar-links {
-  flex: 1;
-  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.navbar-links a {
+.navbar-links .nav-link {
   color: #fffaf0;
   text-decoration: none;
-  margin-right: 20px;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-.navbar-links a:hover {
-  color: #f28f8f; /* roosakas hover */
+.navbar-links .nav-link:hover {
+  color: #f28f8f;
 }
 
-/* Auth button */
 .btn {
   border: 1px solid #fffaf0;
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
@@ -56,7 +64,6 @@
   transition: all 0.3s ease;
 }
 
-/* Login button */
 .btn.login {
   background: transparent;
   color: #fffaf0;
@@ -68,7 +75,6 @@
   border-color: #f28f8f;
 }
 
-/* Logout button */
 .btn.logout {
   background: transparent;
   color: #fffaf0;
