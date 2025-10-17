@@ -4,8 +4,9 @@ const sequelize = require("./util/db");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const beerRoutes = require("./routes/beers");
-const app = express();
+const cartRoutes = require("./routes/cart")
 
+const app = express();
 app.use(cors()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json()); 
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 
 app.use(authRoutes);
 app.use(beerRoutes);
+app.use(cartRoutes)
+
 app.use('/uploads', express.static('uploads'));
 
 sequelize

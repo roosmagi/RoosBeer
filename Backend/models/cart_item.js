@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../util/db');
 
 const CartItem = sequelize.define('CartItem', {
@@ -28,8 +28,9 @@ const CartItem = sequelize.define('CartItem', {
       allowNull: false
     },
     created_at: {
-      type: DataTypes.DATETIME,
-      allowNull: false
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
     tableName: 'cart_item',
