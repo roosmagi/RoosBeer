@@ -9,8 +9,9 @@ export const getAllBeer = async () => {
   return response.data; 
 };
 
-export const getBeerById = (id) => {
-  return axios.get(`${API_URL}/beer/${id}`);
+export const getOneBeer = async (id) => {
+  const response = await axios.get(`${API_URL}/beer/${id}`);
+  return response.data;
 };
 
 export const addBeer = (formData) => {

@@ -1,0 +1,20 @@
+.beer-detail-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.beer-image-detail {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.beer-detail {
+  display: inline-block;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-msg {
+  color: red;
+}

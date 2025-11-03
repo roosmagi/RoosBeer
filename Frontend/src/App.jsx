@@ -9,6 +9,7 @@ import './App.css';
 import AddBeer from './pages/AddBeer.jsx';
 import About from './pages/About.jsx';
 import Shop from './pages/Shop.jsx';
+import BeerDetail from './pages/Beer.jsx';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/add-beer" element={<AddBeer />} />
           <Route path='/About' element={<About />} />
           <Route path='/Shop' element={<Shop />} />
+          <Route path="/beerDetail/:id" element={<BeerDetail />} />
         </Routes>
       </div>
     </Router>
