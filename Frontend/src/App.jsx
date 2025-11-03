@@ -5,8 +5,10 @@ import Register from './pages/Register.jsx';
 import Home from './pages/Home.jsx';
 import Navbar from '../components/Navbar.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'; // siia paneme meie css
+import './App.css';
 import AddBeer from './pages/AddBeer.jsx';
+import About from './pages/About.jsx';
+import Shop from './pages/Shop.jsx';
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/add-beer" element={<AddBeer />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Shop' element={<Shop />} />
         </Routes>
       </div>
     </Router>
