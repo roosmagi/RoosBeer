@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getAllBeer } from '../api/beer';
 import './Shop.css';
 
@@ -7,6 +8,7 @@ function Shop() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [quantities, setQuantities] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBeers = async () => {
@@ -52,7 +54,9 @@ function Shop() {
 
       <div className="beer-grid">
         {beers.map((beer) => (
-          <div key={beer.id} className="beer-card">
+          <div key={beer.id} className="beer-card"
+            onClick={() => navigate(`/beerDetail/${beer.id}`)}
+            style={{ cursor: 'pointer' }}>
             <img
               src={`http://localhost:3002/uploads/${beer.image}`}
               alt={beer.name}
@@ -62,15 +66,15 @@ function Shop() {
             <p><strong>Vol:</strong> {beer.vol}%</p>
             <p><strong>Style:</strong> {beer.style}</p>
             <p><strong>Price:</strong> {beer.price}€</p>
-            <div className="card-actions">
-            <div className="counter">
-              <button onClick={() => decrement(beer.id)}>-</button>
-              <span>{quantities[beer.id]}</span>
-              <button onClick={() => increment(beer.id)}>+</button>
-            </div>
-            <div className='buybutton'>
-            <button>Buy</button>
-            </div>
+            <div className="card-actions" onClick={(e) => e.stopPropagation()}>
+              <div className="counter">
+                <button onClick={() => decrement(beer.id)}>-</button>
+                <span>{quantities[beer.id]}</span>
+                <button onClick={() => increment(beer.id)}>+</button>
+              </div>
+              <div className='buybutton'>
+                <button>Add to Cart</button>
+              </div>
             </div>
           </div>
         ))}

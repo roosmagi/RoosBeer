@@ -53,7 +53,7 @@ function BeerDetail() {
               <button onClick={increment}>+</button>
             </div>
             <div className="buybutton">
-              <button>Buy</button>
+              <button>Add to Cart</button>
             </div>
           </div>
         </div>
