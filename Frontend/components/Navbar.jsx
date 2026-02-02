@@ -21,6 +21,10 @@ function NavigationBar() {
             <Link to="/about" className="nav-link">About</Link>
           </div>
 
+          <Link to="/cart" className="cart-icon">
+            🛒
+          </Link>
+
           <div className="navbar-auth">
             {token ? (
               <button className="btn logout" onClick={handleLogout}>Logout</button>

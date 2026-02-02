@@ -7,6 +7,15 @@ html, body, #root {
   background-color: #f1e8e8;
 }
 
+body {
+  background-color: #f1e8e8;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: #f1e8e8;
+}
+
 /* Hero Section */
 .hero {
   width: 100%;

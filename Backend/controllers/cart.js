@@ -11,8 +11,13 @@ class CartController {
         include: [
           {
             model: CartItem,
-            as: "items",
-            include: [{ model: Beer }]
+            as: "cart_items",
+            include: [
+              {
+                model: Beer,
+                as: 'beer'
+              }
+            ]
           }
         ]
       });
@@ -28,18 +33,28 @@ class CartController {
   static async getCartByUser(req, res) {
     try {
       const cart = await Cart.findOne({
-        where: { user_id: req.params.userId },
+        where: { 
+          user_id: req.params.userId,
+          status: 'open'
+        },
         include: [
           {
             model: CartItem,
-            as: "items",
-            include: [{ model: Beer }]
+            as: "cart_items",
+            include: [
+              {
+                model: Beer,
+                as: 'beer'
+              }
+            ]
           }
         ]
       });
 
+      console.log("Cart data:", JSON.stringify(cart, null, 2));
       res.status(200).json(cart);
     } catch (error) {
+      console.error("Error in getCartByUser:", error);
       res.status(500).json({ message: error.message });
     }
   }
@@ -51,8 +66,13 @@ class CartController {
         include: [
           {
             model: CartItem,
-            as: "items",
-            include: [Beer]
+            as: "cart_items",
+            include: [
+              {
+                model: Beer,
+                as: 'beer'
+              }
+            ]
           }
         ]
       });
@@ -119,6 +139,31 @@ class CartController {
 
     } catch (error) {
       console.error('Error removing item:', error);
+      res.status(500).json({ message: error.message });
+    }
+  }
+
+  // PUT /carts/:id/items/:itemId - Update item quantity
+  static async updateItemQuantity(req, res) {
+    try {
+      const { id, itemId } = req.params;
+      const { quantity } = req.body;
+
+      if (!quantity || quantity < 1) {
+        return res.status(400).json({ message: "Quantity must be at least 1" });
+      }
+
+      const item = await CartItem.findOne({
+        where: { id: itemId, cart_id: id }
+      });
+
+      if (!item) return res.status(404).json({ message: "Item not found in cart" });
+
+      await item.update({ quantity });
+      res.status(200).json(item);
+
+    } catch (error) {
+      console.error('Error updating item quantity:', error);
       res.status(500).json({ message: error.message });
     }
   }

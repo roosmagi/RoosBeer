@@ -2,9 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("./util/db");
 const cors = require("cors");
+
 const authRoutes = require("./routes/auth");
 const beerRoutes = require("./routes/beers");
-const cartRoutes = require("./routes/cart")
+const cartRoutes = require("./routes/cart");
+require("./models/association");
 
 const app = express();
 app.use(cors()); 
